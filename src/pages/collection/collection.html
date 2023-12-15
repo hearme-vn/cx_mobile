@@ -1,0 +1,32 @@
+
+<ion-content class="collection-content" [ngStyle]="{'background-image': 'url(' +  linkIdle + ')'}">
+    <ion-slides autoplay="5000" loop="true" speed="500" class="slides" pager="true" *ngIf="mediaType == 1" (ionSlideDidChange)="slideChanged()">
+        <ion-slide class="collection-backgroud" *ngFor="let collection of collections" [ngStyle]="getMyStyles(collection)"></ion-slide>
+    </ion-slides>
+    <div class="video-container" *ngIf="mediaType == 2 && linkVideo">
+        <div class="video-cover" tappable (click)="appInit.gotoFeedback()"></div>
+        <iframe #videoIframe id="videoIframe" [src]="linkVideo | youtube" frameborder="0" allowfullscreen width="100%" height="100%"></iframe>
+    </div>
+</ion-content>
+<!-- 
+<hearme-footer 
+    [tabs]=tabs
+    [controller]=this>
+</hearme-footer> -->
+
+<div class="footer footer-md">
+    <ion-row>
+        <ion-col col-3 class="text-copyright text-left" align-self-end>
+            <div><span>© www.hearme.vn</span></div>
+        </ion-col>       
+        <!-- <ion-col col-6 class="text-copyright" *ngIf="!tabs || (tabs.length<2)"> -->
+        <ion-col col-6 class="text-copyright">
+            <button col-9 class="slide-default slide-active" z-index=1000
+                (click)="appInit.gotoFeedback()">
+                <span *ngIf="!tabs || (tabs.length<1) || !tabs[0]?.label">{{ 'TAB_FEEDBACK' | translate }}</span>
+                <span *ngIf="tabs && (tabs.length>0) && tabs[0]?.label">{{ tabs[0].label }}</span>                
+                <!-- <span>{{ 'TAB_FEEDBACK' | translate }}</span> -->
+            </button>
+        </ion-col>
+    </ion-row>
+</div>

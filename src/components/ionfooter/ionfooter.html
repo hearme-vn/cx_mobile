@@ -1,0 +1,65 @@
+<!-- General button, tabs, navigator for pages -->
+<!-- For First survey page -->
+<!-- For Middle survey page -->
+<ion-row no-border *ngIf="survey" [ngClass]="(appInit.screen_orientation=='portrait')? 'portrait': 'landscape'">
+    <ion-col col-4 class="carousel-indicators">
+        <ul *ngIf="survey_length>1">
+            <li *ngFor="let page of pages" [ngClass]="(page==survey_index)? 'navigation_indicator':''" ></li>
+        </ul>
+    </ion-col>
+    <ion-col col-8>
+        <ion-row class="navigations text-right">
+            <ion-col col-6  *ngIf="!survey?.isFirst">    
+                <button col-12 ion-button class="all-buttons" (click)="controller.runPreviousSurvey()"
+                    [ngStyle]="{'background-color':'white', 'border-color':appInit?.DEVICE_MAIN_COLOR, 'color': appInit?.DEVICE_MAIN_COLOR}">
+                    <ion-icon class="main_text_color" ios="md-arrow-dropleft" md="md-arrow-dropleft"></ion-icon>
+                </button>
+            </ion-col>
+            <ion-col col-6>
+                <button col-12 ion-button class="all-buttons" (click)="controller.sendFeedback()"
+                    [ngStyle]="{'background-color':appInit?.DEVICE_MAIN_COLOR, 'border-color':appInit?.DEVICE_MAIN_COLOR}">
+                    <span class="hidden-xs" *ngIf="survey?.isLast"> {{'COMMENT_sendfeedback' | translate}} &nbsp;&nbsp;&nbsp;</span>
+                    <ion-icon ios="md-arrow-dropright" md="md-arrow-dropright"></ion-icon>
+                </button>
+            </ion-col>
+            <ion-col col-6 *ngIf="appInit.direct_survey_page && survey?.isFirst && appInit?.languages?.datas?.length>1" 
+                class="text-right cbo-lang" style="margin:auto;" align-self-end>
+                <ng-container *ngTemplateOutlet="tpl_language_selection"></ng-container>
+            </ion-col>            
+        </ion-row>
+    </ion-col>
+</ion-row>
+
+<!-- For welcome page -->
+<ion-row *ngIf="pageName=='WelcomePage'" 
+    [ngClass]="(appInit.screen_orientation=='portrait')? 'portrait': 'landscape'">
+    <ion-col col-3 class="text-copyright text-left" align-self-end>
+        <div *ngIf="!controller.urlParams.get('no_tm')" ><span>© hearme.vn</span></div>
+    </ion-col>
+    <ion-col col-6 class="text-copyright">
+        <button col-9 *ngIf="invitation && invitation.status!=0" (click)="appInit.finishSurvey()">
+            <span>{{ 'WELCOME_finish' | translate }}</span>
+        </button>
+        <button col-9 class="all-buttons" z-index=1000 [ngStyle]="{'background-color':appInit?.DEVICE_MAIN_COLOR, 'border-color':appInit?.DEVICE_MAIN_COLOR}"
+            *ngIf="!invitation || invitation?.status==0" (click)="controller.startSendFeedback()">
+            <span>{{ 'TAB_FEEDBACK' | translate }}</span>
+        </button>
+    </ion-col>
+    
+    <ion-col col-3 class="text-right cbo-lang" style="margin:auto;" align-self-end *ngIf="appInit?.languages?.datas?.length>1">
+        <ng-container *ngTemplateOutlet="tpl_language_selection"></ng-container>
+    </ion-col>
+</ion-row>
+
+<ng-template #tpl_language_selection>
+    <ul class="cbo-lang-list" *ngIf="controller.show_language_Listbox">
+        <li tappable *ngFor="let item of appInit?.languages.datas" (click)="controller.changeLanguage(item)">
+            <img src="{{ item.flag }}"> 
+            <span>{{ item.name }}</span>
+        </li>
+    </ul>
+    <div tappable (click)="controller.showHideLang()" class="cbo-lang-selected">
+        <img name="hearme-lang" [src]="appInit?.languages?.selected.flag"/>
+        <ion-icon class="lang-arrow-up" name="arrow-dropup"></ion-icon>
+    </div>
+</ng-template>

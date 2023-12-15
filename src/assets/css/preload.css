@@ -1,0 +1,318 @@
+// Created by: thuc@hearme.vn
+// Organization: LabsOfThings.com
+// Project: hearme.vn
+// Date: 22 Jan 2020
+// --------------------------------------------------
+
+.wrapper,body {
+    text-rendering: optimizeLegibility
+}
+.cbo-lang li a,.item-block,.tab-button,[ion-button] {
+    text-decoration: none
+}
+button,html input[type=button],input[type=reset],input[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer
+}
+
+.click-block {
+    display: none
+}
+
+.click-block-enabled {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-transform: translate3d(0,-100%,0) translateY(1px);
+    transform: translate3d(0,-100%,0) translateY(1px);
+    position: absolute;
+    z-index: 99999;
+    display: block;
+    opacity: 0;
+    contain: strict
+}
+
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none
+}
+
+html {
+    font-size: 62.5%;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%
+}
+
+body {
+    margin: 0;
+    position: fixed;
+    max-height: 100%;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    -webkit-user-drag: none;
+    -ms-content-zooming: none;
+    touch-action: manipulation;
+    word-wrap: break-word;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    text-size-adjust: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.ion-page,ion-backdrop,ion-footer {
+    position: absolute
+}
+
+ion-app.ios,ion-app.md,ion-app.wp {
+    font-size: 1.4rem;
+    background-color: #fff
+}
+
+
+.app-root,ion-app,ion-nav,ion-tab,ion-tabs {
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: 0;
+    display: block;
+    width: 100%;
+    height: 100%
+}
+
+ion-footer,ion-header {
+    z-index: 10;
+    display: block;
+    width: 100%;
+    left: 0
+}
+
+ion-tab {
+    display: none
+}
+
+ion-tab.show-tab {
+    display: block
+}
+
+.app-root,.ion-page,ion-app,ion-nav,ion-tab,ion-tabs {
+    contain: strict
+}
+
+.ion-page {
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+    opacity: 0
+}
+
+.nav-decor,[app-viewport],[nav-viewport],[overlay-portal],[tab-portal],ion-badge:empty {
+    display: none
+}
+
+.ion-page.show-page {
+    opacity: 1
+}
+
+ion-header {
+    top: 0
+}
+
+
+.fixed-content {
+    right: 0;
+    bottom: 0;
+    position: absolute
+}
+
+ion-app.ios [padding],ion-app.ios [padding] .scroll-content,ion-app.md [padding],ion-app.md [padding] .scroll-content,ion-app.wp [padding],ion-app.wp [padding] .scroll-content {
+    padding: 16px
+}
+
+.col,.grid,[col-12] {
+    width: 100%
+}
+
+.content-md {
+    color: #000;
+    background-color: #fff
+}
+
+
+page-welcome ion-title {
+    padding: 0!important;
+    position: unset!important
+}
+
+page-welcome .scroll-content {
+    margin: 0!important
+}
+
+page-welcome .slide-default {
+    color: #fff;
+    height: 100%;
+    border: 2px solid #1DCE6C;
+    text-transform: uppercase;
+    display: table;
+    text-align: -webkit-center;
+    font-size: 6vh
+}
+
+page-welcome .toolbar {
+    padding: 0!important;
+    line-height: 6vh
+}
+
+page-welcome .toolbar-title {
+    font-size: 4vh!important;
+    font-weight: 400!important;
+    padding: 0;
+    white-space: normal
+}
+
+page-welcome ion-navbar {
+    height: 26vh!important
+}
+
+page-welcome ion-content .question {
+    padding: 2vh!important
+}
+
+page-welcome .question em,page-welcome p {
+    font-style: normal!important;
+    font-size: 8vh;
+    color: #000
+}
+
+page-welcome .author {
+    text-align: right!important;
+    font-style: italic!important
+}
+
+page-welcome .explaination em,page-welcome p {
+    font-style: normal!important;
+    font-size: 5vh;
+    margin: 10px
+}
+
+
+page-welcome ion-title div {
+    color: #1DCE6C!important;
+    text-transform: uppercase;
+    font-size: 3.5rem!important
+}
+
+page-welcome ion-navbar.logo-header {
+    height: 20vh!important
+}
+
+page-welcome .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+    background: #fff
+}
+
+
+page-welcome .toolbar-background {
+    background-image: url(../assets/imgs/bg-header.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center
+}
+
+
+@media (max-width: 768px) {
+    page-welcome ion-title div {
+        font-size:1.3rem!important
+    }
+}
+
+page-welcome .portrait .question {
+    margin: 2vh
+}
+
+page-welcome .portrait .title-logo img,page-welcome .portrait ion-navbar img {
+    max-height: 18vh!important;
+    max-width: 100vw!important
+}
+
+page-welcome .portrait .scroll-content em {
+    font-size: 5vh
+}
+
+page-welcome .portrait .scroll-content p {
+    font-size: 3vh;
+    margin: 2vh!important
+}
+
+page-welcome .portrait .scroll-content span {
+    font-size: 5vh;
+    padding: 5px 0 0
+}
+
+page-welcome .portrait .button-lang {
+    width: 15vw
+}
+
+page-welcome .portrait .text-copyright {
+    font-size: 3.8vw
+}
+
+page-welcome .portrait ion-icon {
+    font-size: 6vh;
+    margin: 0;
+    height: 6vh!important
+}
+
+page-welcome .portrait .cbo-lang .cbo-lang-selected .lang-selected-arrow {
+    font-size: 6vh
+}
+
+page-welcome ion-header .toolbar-background {
+    background: rgba(222,233,244,.4)!important;
+    background-image: unset!important
+}
+
+page-idle ion-content {
+  background-color: #1DCE6C !important;
+}
+
+page-idle .scroll-content {
+  padding: 0px !important;
+  margin: 0px !important;
+  overflow: hidden !important;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+page-idle .idle-content {
+  background-size: cover !important;
+  padding: 0px !important;
+}
+
+page-idle .hearme-logo {
+  max-height: 30vh;
+  max-width: 50vw;
+}

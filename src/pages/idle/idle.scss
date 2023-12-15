@@ -1,0 +1,40 @@
+page-idle {
+  ion-content {
+    background-color: #1DCE6C !important;
+  }
+  .scroll-content{
+    padding: 0px!important;
+    margin: 0px!important;
+    overflow: hidden !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .idle-content{
+    // background: url('../assets/imgs/splash.png') no-repeat center !important; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover !important;
+    padding: 0px !important;
+  }
+  
+  .hearme-logo {
+    max-height: 30vh;
+    max-width: 50vw;
+  }
+  
+  .video-container {
+    height: 100%;
+    width: 100%;
+    padding: 0px;
+    margin: 0px; 
+    overflow: hidden;
+  }
+  .video-container iframe, .video-container object, .video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

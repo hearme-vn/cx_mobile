@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<script>
+        var isMobile = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)
+        if (!isMobile || !isMobile.length) {
+            // var w = document.documentElement.clientWidth || document.body.clientWidth || window.innerWidth;
+            var w = document.documentElement.clientWidth;
+            if (w > 1280) {
+                var cx_desktop= document.location.origin + "/d/" + document.location.search;
+                window.location = cx_desktop;
+            }
+        }
+	</script>
+	
+	<meta charset="UTF-8">
+	<title>hearme Feedback system</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="msapplication-tap-highlight" content="no">
+	
+	<link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
+	<link rel="manifest" href="manifest.json">
+	<meta name="theme-color" content="#4e8ef7">
+	
+	<!-- External script loaded before running angualarjs -->
+	<!-- <script src="assets/js/date.js"></script> -->
+	
+	<!-- cordova.js required for cordova apps -->
+	<!-- <script src="cordova.js"></script> -->
+	<!-- un-comment this code to enable service worker
+	<script>
+		if ('serviceWorker' in navigator) {
+		navigator.serviceWorker.register('service-worker.js')
+			.then(() => console.log('service worker installed'))
+			.catch(err => console.error('Error', err));
+		}
+	</script>-->
+	<link href="build/main.css" rel="stylesheet">
+
+<!-- 	
+	<link href="assets/css/preload.css" rel="stylesheet">    
+	<link href="build/main.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="build/main.css"></noscript>
+ -->
+<!-- 
+	<script>
+    
+		function isMobile() { 
+			if ( navigator.userAgent.match(/Android/i)
+				|| navigator.userAgent.match(/webOS/i)
+				|| navigator.userAgent.match(/iPhone/i)
+				|| navigator.userAgent.match(/iPad/i)
+				|| navigator.userAgent.match(/iPod/i)
+				|| navigator.userAgent.match(/BlackBerry/i)
+				|| navigator.userAgent.match(/Windows Phone/i) ) {
+				return true;
+			 } else {
+				return false;
+			 }
+		}
+		
+		function configureScreen() {
+			if (isMobile()) {
+				document.documentElement.requestFullscreen();
+				window.screen.orientation.lock("landscape");
+			}
+		}
+	
+		function recaptchaOnload() {
+			var wiget = document.getElementById('recaptcha');
+			if (wiget && !wiget.innerHTML) {
+				grecaptcha.render("recaptcha", {
+					sitekey: '6Lf3QnUUAAAAAFi0nKg2cAjXVrzWzj_xuJAt7RtP'
+				});
+			}
+			window.setTimeout(recaptchaOnload, 500);
+		}
+        
+	</script>	 -->
+	<!-- <script src='https://www.google.com/recaptcha/api.js?onload=recaptchaOnload&render=explicit&hl=vi' async defer></script> -->
+ 	
+</head>
+<body>
+
+  <!-- Ionic's root component and where the app will load -->
+  <ion-app></ion-app>
+  
+  <!-- The polyfills js is generated during the build process -->
+  <script src="build/polyfills.js"></script>
+
+  <!-- The vendor js is generated during the build process
+       It contains all of the dependencies in node_modules -->
+  <script src="build/vendor.js"></script>
+
+  <!-- The main bundle js is generated during the build process -->
+  <script src="build/main.js"></script>
+
+  
+</body>
+</html>
