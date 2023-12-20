@@ -1,4 +1,4 @@
-# hearme cx_mobile
+# cx_mobile: Open-source online feedback channel for CXM platform
 ![hearme cx_mobile](docs/imgs/hearme_cx.png)
 
 ## Description
@@ -13,11 +13,37 @@ The **hearme cx_mobile** module is an open-source repository that empowers clien
 
 - After collecting feedback with this online channel, you can manage your feedback through the **hearme** web application at [hearme.vn/zeus](hearme.vn/zeus) or by installing the **hearme CXM** mobile app on your iOS or Android device.
 
-- This project uses the Ionic 2 framework.
+
+## Use cases
+
+**1. Unified Customer Feedback Collection Across Channels**
+
+- Scenario: You want to collect customer feedback seamlessly across various communication channels.
+- Enhancement: Our open-source CXM platform empowers you to implement custom logic for intercept processing, tailor the feedback collection process to your specific needs.
+
+**2. Custom Application Development for Feedback Collection**
+
+- Scenario: You have unique requirements and wish to develop your own applications for customer feedback collection.
+- Enhancement: The flexibility of our open-source CXM platform extends to empowering you to build your own applications for customer feedback collection. Leverage our modular and customizable framework to create apps tailored to your brand's specific requirements.
+
+**3. Becoming a CXM Provider with Your Trademark**
+
+- Scenario: You aspire to establish yourself as a CXM (Customer Experience Management) provider with a distinctive brand.
+
+- Enhancement: Transform your vision into reality by adopting our open-source modules. Incorporate them into your CXM platform and customize them with your own trademark. This empowers you to deliver a unique and branded CXM experience to your clients.
+
+- Benefits: By utilizing our open-source modules, you not only expedite the development process but also gain the flexibility to shape the platform according to your branding strategy. This positions you as a dynamic CXM provider with a unique identity in the market.
 
 ## hearme architechture
 ![hearme architectur](docs/imgs/hearme_components.png)
 
+## Related open-source modules
+
+- [hearme Zeus](https://github.com/hearme-vn/hearme-Zeus)
+- [mobile Zeus](https://github.com/hearme-vn/mobile-Zeus)
+- [hearme station](https://github.com/hearme-vn/hearme_station)
+- [cx mobile](https://github.com/hearme-vn/cx_mobile) 
+- and [cx desktop](https://github.com/hearme-vn/cx_desktop)
 
 ## Demonstration:
 - Kiosk feedback channel: https://www.youtube.com/watch?v=ThOjFk_Ztv8&list=PLFoi8tG0KXO-mViolS5_1orwIA4GZwYid 
